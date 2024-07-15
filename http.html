@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR404 - HTTPS Explained</title>
+    <style>
+        @keyframes rainbow {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        @keyframes roll-credits {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(calc(-100% + 100vh)); }
+        }
+
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee);
+            background-size: 1400% 1400%;
+            animation: rainbow 15s ease infinite;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1em 0;
+            text-shadow: 2px 2px 4px #000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            }
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        main {
+            padding: 2em;
+            margin: 1em;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        section h2 {
+            color: #ffdd57;
+            border-bottom: 2px solid #ffdd57;
+            padding-bottom: 0.5em;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+
+        ul li {
+            padding: 0.5em 0;
+        }
+
+        #showCreditsButton {
+            padding: 1em 2em;
+            margin-top: 2em;
+            font-size: 1.2em;
+            background-color: #ffdd57;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #creditsContainer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 100vh; /* Ensure full viewport height */
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            z-index: 3; /* Place above other content */
+        }
+
+        #credits {
+            font-size: 1.5em;
+            animation: roll-credits 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ERROR404</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#history">History of HTTP</a></li>
+            <li><a href="#request-response">HTTP Request-Response Model</a></li>
+            <li><a href="#http-https">HTTP vs HTTPS</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>HTTP (HyperText Transfer Protocol) is the foundation of data communication on the World Wide Web. It defines how messages are formatted and transmitted, and how web servers and browsers respond to commands.</p>
+        </section>
+        <section id="features">
+            <h2>2. Features</h2>
+            <p>Key features of HTTP include:</p>
+            <ul>
+                <li>Simple and easy to implement.</li>
+                <li>Stateless nature: Each request is independent of previous requests.</li>
+                <li>Supports various media types and content encoding.</li>
+                <li>Flexible: Allows for negotiation between client and server.</li>
+                <li>Text-based: Human-readable for debugging and development.</li>
+            </ul>
+        </section>
+        <section id="history">
+            <h2>3. History of HTTP</h2>
+            <p>HTTP was first proposed by Tim Berners-Lee in 1989 while working at CERN. It evolved through several versions:</p>
+            <ul>
+                <li>HTTP/0.9: Simple protocol supporting only GET requests.</li>
+                <li>HTTP/1.0: Introduced features like headers, status codes, and POST method.</li>
+                <li>HTTP/1.1: Improved performance with persistent connections, caching, and pipelining.</li>
+                <li>HTTP/2: Major revision focused on performance improvements, multiplexing, and server push.</li>
+                <li>HTTP/3: Latest version using QUIC protocol for better security and performance over UDP.</li>
+            </ul>
+        </section>
+        <section id="request-response">
+            <h2>4. HTTP Request-Response Model</h2>
+            <p>HTTP follows a request-response model:</p>
+            <ul>
+                <li>Client sends a request to the server, specifying method (GET, POST, etc.), URI, headers, and body (for POST requests).</li>
+                <li>Server processes the request, generates a response containing status code, headers, and optional body.</li>
+                <li>Communication is stateless: Server does not retain information about previous requests.</li>
+                <li>Responses include status codes indicating success, redirection, client errors, or server errors.</li>
+                <li>Supports various methods for different actions (GET for retrieving data, POST for submitting data, etc.).</li>
+            </ul>
+        </section>
+        <section id="http-https">
+            <h2>5. HTTP vs HTTPS</h2>
+            <p>Key differences between HTTP and HTTPS:</p>
+            <ul>
+                <li>Security: HTTP is unsecured, while HTTPS encrypts data using SSL/TLS.</li>
+                <li>Data Integrity: HTTPS ensures data integrity with cryptographic algorithms.</li>
+                <li>Authentication: HTTPS verifies server identity with digital certificates.</li>
+                <li>SEO Impact: HTTPS is favored by search engines for better ranking.</li>
+                <li>Performance: HTTPS may have slightly slower initial connection due to encryption overhead.</li>
+            </ul>
+        </section>
+        <section id="roll-credits">
+            <h2>Team ERROR404</h2>
+            <button id="showCreditsButton">Show Credits</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ERROR404. All rights reserved.</p>
+    </footer>
+    <div id="creditsContainer">
+        <div id="credits">
+            <ul>
+                <li>Kiran Varghese John</li>
+                <li>Nachiketh K V</li>
+                <li>Rishikesh K U</li>
+                <li>Riya Elsa Sunny</li>
+                <li>Jewel Jenu</li>
+                <li>Ann Mary Saji</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const showCreditsButton = document.getElementById('showCreditsButton');
+        const creditsContainer = document.getElementById('creditsContainer');
+
+        showCreditsButton.addEventListener('click', () => {
+            creditsContainer.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Disable scrolling
+        });
+
+        // Click anywhere outside credits to close
+        creditsContainer.addEventListener('click', (event) => {
+            if (event.target === creditsContainer) {
+                creditsContainer.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            }
+        });
+    </script>
+</body>
+</html>
